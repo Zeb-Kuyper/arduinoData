@@ -83,7 +83,7 @@ def measureLDR(data):
     brightness = data[2]
     
 def measure(data):
-    global humidity, temperature, stats
+    global humidity, temperature
     
     if data[3] == 0:
         humidity = data[4]
@@ -94,10 +94,8 @@ def measure(data):
 def setup():
     global board
     board = CustomPymata4(com_port="COM3")
-    board.set_pin_mode_dht(DHTPIN, sensor_type=11, differential=.05, callback = measure)
-    board.set_pin_mode_analog_input(LDRPIN, callback=measureLDR, differential=10)
-    measure()
-    measureLDR()
+    board.set_pin_mode_dht(DHTPIN, sensor_type = 11, differential = .05, callback = measure)
+    board.set_pin_mode_analog_input(LDRPIN, callback = measureLDR, differential = 10)
     store_values()
     avg_measure()
     get_min_max()
