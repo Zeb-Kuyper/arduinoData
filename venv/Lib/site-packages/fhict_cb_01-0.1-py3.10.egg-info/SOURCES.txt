@@ -1,0 +1,12 @@
+LICENSE.txt
+README.md
+setup.cfg
+setup.py
+src/fhict_cb_01/CustomPymata4.py
+src/fhict_cb_01/__init__.py
+src/fhict_cb_01/flask.py
+src/fhict_cb_01.egg-info/PKG-INFO
+src/fhict_cb_01.egg-info/SOURCES.txt
+src/fhict_cb_01.egg-info/dependency_links.txt
+src/fhict_cb_01.egg-info/requires.txt
+src/fhict_cb_01.egg-info/top_level.txt

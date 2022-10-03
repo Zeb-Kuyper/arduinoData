@@ -1,0 +1,10 @@
+Metadata-Version: 2.1
+Name: fhict-cb-01
+Version: 0.1
+Home-page: https://github.com/adamatei/pypi-package
+Author: Author Name
+Author-email: email@example.com
+License: MIT
+Keywords: test project
+Requires-Python: >=3.7.0
+License-File: LICENSE.txt
