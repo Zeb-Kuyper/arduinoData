@@ -1,0 +1,14 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <div>
+            <p>Average = {{ average }}</p>
+            {% for (timestamp, temperature) in data %} 
+            <p>{{ timestamp }} : {{ temperature }}</p>
+            {% endfor %}
+            
+        </div>
+    </body>
+</html>
