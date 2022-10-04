@@ -113,7 +113,6 @@ def setup(): # Initialize sensors
     board = CustomPymata4(com_port="COM3")
     board.set_pin_mode_dht(DHTPIN, sensor_type = 11, differential = .05, callback = measure)
     board.set_pin_mode_analog_input(LDRPIN, callback = measureLDR, differential = 10)
-    board.
 
 def getData():
     global stats
