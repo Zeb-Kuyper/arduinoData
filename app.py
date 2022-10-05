@@ -19,28 +19,27 @@ measuredData = []
 
 stats = {
 
-    'humidity':{
-    'currentValue':0,
-    'valueList': [],
-    'averageValue':0,
-    'minValue':0,
-    'maxValue':0,
-},
-    'temperature':{
-    'currentValue':0,
-    'valueList': [],
-    'averageValue':0,
-    'minValue':0,
-    'maxValue':0,
-},
-    'brightness':{
-    'currentValue':0,
-    'valueList': [],
-    'averageValue':0,
-    'minValue':0,
-    'maxValue':0,
-},
-
+    'humidity': {
+        'currentValue':0,
+        'valueList': [],
+        'averageValue':0,
+        'minValue':0,
+        'maxValue':0,
+        },
+    'temperature': {
+        'currentValue':0,
+        'valueList': [],
+        'averageValue':0,
+        'minValue':0,
+        'maxValue':0,
+        },
+    'brightness': {
+        'currentValue':0,
+        'valueList': [],
+        'averageValue':0,
+        'minValue':0,
+        'maxValue':0,
+        },
     'time':0
 }
 
@@ -131,5 +130,6 @@ setup()
 @app.route('/')
 def dashboard():
     getData()
+
          
-    return render_template('index.html', stats = stats)
+    return render_template('./templates/index.html', stats = stats)
