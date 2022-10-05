@@ -40,7 +40,8 @@ stats = {
         'minValue':0,
         'maxValue':0,
         },
-    'time':0
+    'time':0,
+    'sensorID':5005817
 }
 
 def get_min_max():
