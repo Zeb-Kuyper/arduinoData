@@ -15,11 +15,10 @@ humidity = 0
 temperature = 0
 brightness = 0
 
-measuredData = []
-
 stats = {
-
     'humidity': {
+        'time':0,
+        'sensorID':5005817,
         'currentValue':0,
         'valueList': [],
         'averageValue':0,
@@ -27,6 +26,8 @@ stats = {
         'maxValue':0,
         },
     'temperature': {
+        'time':0,
+        'sensorID':5005817,
         'currentValue':0,
         'valueList': [],
         'averageValue':0,
@@ -34,14 +35,15 @@ stats = {
         'maxValue':0,
         },
     'brightness': {
+        'time':0,
+        'sensorID':5005817,
         'currentValue':0,
         'valueList': [],
         'averageValue':0,
         'minValue':0,
         'maxValue':0,
         },
-    'time':0,
-    'sensorID':5005817
+    
 }
 
 def get_min_max():
@@ -82,19 +84,17 @@ def store_values():
 
     # Initialize variables
     measuredData = [humidity, temperature, brightness]
+    currentTime = get_time()
     value = 0
     
     if humidity != 0 and temperature != 0: # exception for first Arduino launch
         for i, measurements in enumerate(stats): # iterate over every measurement key in stats dict
-            if measurements != 'time': # exception for time key
 
                 # Store measurement to respective key dictionary
                 value = measuredData[i]
                 stats[measurements]['currentValue'] = int(value)
                 stats[measurements]['valueList'].append(value)
-
-        currentTime = get_time()
-        stats['time'] = currentTime
+                stats[measurements]['time'] = currentTime
 
     print(stats)
 
@@ -126,11 +126,10 @@ def getData():
     return stats
 
 setup()
- 
+
 
 @app.route('/')
 def dashboard():
     getData()
 
-         
     return render_template('./templates/index.html', stats = stats)
