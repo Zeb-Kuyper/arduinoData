@@ -132,4 +132,4 @@ setup()
 def dashboard():
     getData()
 
-    return render_template('./templates/index.html', stats = stats)
+    return render_template('./index.html', stats = stats)
